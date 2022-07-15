@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/meteo-react/static/css/main.7b448d90.css",
+    "main.js": "/meteo-react/static/js/main.ef071aa2.js",
+    "index.html": "/meteo-react/index.html",
+    "main.7b448d90.css.map": "/meteo-react/static/css/main.7b448d90.css.map",
+    "main.ef071aa2.js.map": "/meteo-react/static/js/main.ef071aa2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b448d90.css",
+    "static/js/main.ef071aa2.js"
+  ]
+}
