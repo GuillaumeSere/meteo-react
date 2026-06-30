@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+    <title id="title">Climatlas</title>
+    <desc id="desc">Logo Climatlas avec anneau cartographique, soleil et nuage.</desc>
+    <defs>
+        <linearGradient id="bg" x1="74" y1="62" x2="438" y2="450" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#191713" />
+            <stop offset="0.55" stop-color="#11110f" />
+            <stop offset="1" stop-color="#101616" />
+        </linearGradient>
+        <linearGradient id="ring" x1="124" y1="124" x2="388" y2="388" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#6fd6ff" />
+            <stop offset="0.48" stop-color="#57d68d" />
+            <stop offset="1" stop-color="#f4c430" />
+        </linearGradient>
+        <linearGradient id="cloud" x1="155" y1="261" x2="357" y2="367" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff9ea" />
+            <stop offset="1" stop-color="#cfefff" />
+        </linearGradient>
+        <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.32" />
+        </filter>
+    </defs>
+
+    <rect width="512" height="512" rx="108" fill="url(#bg)" />
+    <g opacity="0.16" stroke="#fff9ea" stroke-width="4">
+        <path d="M118 178h276" />
+        <path d="M118 256h276" />
+        <path d="M118 334h276" />
+        <path d="M178 118v276" />
+        <path d="M256 118v276" />
+        <path d="M334 118v276" />
+    </g>
+
+    <path
+        d="M362 137a152 152 0 1 0 0 238"
+        fill="none"
+        stroke="url(#ring)"
+        stroke-linecap="round"
+        stroke-width="28"
+    />
+    <path d="M151 256h210" fill="none" stroke="#6fd6ff" stroke-linecap="round" stroke-opacity="0.45" stroke-width="10" />
+    <path d="M256 151v210" fill="none" stroke="#fff9ea" stroke-linecap="round" stroke-opacity="0.18" stroke-width="8" />
+
+    <g filter="url(#soft-shadow)">
+        <circle cx="340" cy="162" r="48" fill="#f4c430" />
+        <circle cx="340" cy="162" r="30" fill="#ffdf65" />
+    </g>
+
+    <g filter="url(#soft-shadow)">
+        <path
+            d="M159 333c0-31 25-56 56-56 8 0 16 2 23 5 15-27 43-44 76-44 48 0 87 39 87 87 0 5 0 10-1 14h-230c-7 0-11-2-11-6Z"
+            fill="#6fd6ff"
+            fill-opacity="0.24"
+        />
+        <path
+            d="M137 340c0-30 24-54 54-54 9 0 18 2 25 6 14-27 42-45 75-45 45 0 82 35 85 79h3c24 0 44 19 44 43 0 6-1 11-3 16H152c-24 0-43-20-43-44 0-23 18-42 40-43-8 11-12 25-12 42Z"
+            fill="url(#cloud)"
+        />
+        <path d="M178 385h207" stroke="#6fd6ff" stroke-linecap="round" stroke-opacity="0.74" stroke-width="10" />
+    </g>
+
+    <path
+        d="M376 232c21 13 36 34 40 58"
+        fill="none"
+        stroke="#ff7a59"
+        stroke-linecap="round"
+        stroke-width="16"
+    />
+</svg>

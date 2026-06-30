@@ -3,30 +3,75 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#11110f" />
-    <meta name="description" content="Tableau meteo interactif avec recherche et grandes villes du monde." />
-    <meta name="google-site-verification" content="pOJIO6IfVsiX8gZzHJaYMllpPBwTYldr-_HcrKmpID0" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta
+        name="description"
+        content="Consultez la m&eacute;t&eacute;o en direct, les temp&eacute;ratures et les pr&eacute;visions &agrave; 5 jours pour Paris, Tokyo, New York, Delhi et les grandes villes du monde avec Climatlas."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Guillaume SERE" />
+    <meta name="application-name" content="Climatlas" />
+    <meta name="apple-mobile-web-app-title" content="Climatlas" />
+    <meta name="google-site-verification" content="nwVPqsKRGvHVh9v-Qn4QoawQzNbN99Sfg6usOSlUEhg" />
+
+    <link rel="canonical" href="https://climatlas.vercel.app/" />
+    <link rel="alternate" href="https://climatlas.vercel.app/" hreflang="fr" />
+    <link rel="alternate" href="https://climatlas.vercel.app/" hreflang="x-default" />
+    <link rel="preconnect" href="https://api.openweathermap.org" />
+    <link rel="preconnect" href="https://wft-geo-db.p.rapidapi.com" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="any" />
+    <link rel="icon" href="%PUBLIC_URL%/logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" sizes="192x192" />
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>Climatlas</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Climatlas" />
+    <meta property="og:title" content="Climatlas - M&eacute;t&eacute;o en direct et pr&eacute;visions" />
+    <meta
+        property="og:description"
+        content="Recherchez une ville et suivez les conditions m&eacute;t&eacute;o, la temp&eacute;rature, le vent, la pluie et les pr&eacute;visions des prochains jours."
+    />
+    <meta property="og:url" content="https://climatlas.vercel.app/" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:image" content="https://climatlas.vercel.app/logo512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Logo Climatlas avec soleil, nuage et grille meteo." />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Climatlas - M&eacute;t&eacute;o en direct et pr&eacute;visions" />
+    <meta
+        name="twitter:description"
+        content="Un tableau m&eacute;t&eacute;o interactif pour explorer les grandes villes du monde et suivre les pr&eacute;visions &agrave; 5 jours."
+    />
+    <meta name="twitter:image" content="https://climatlas.vercel.app/logo512.png" />
+    <meta name="twitter:image:alt" content="Logo Climatlas avec soleil, nuage et grille meteo." />
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Climatlas",
+            "url": "https://climatlas.vercel.app/",
+            "applicationCategory": "WeatherApplication",
+            "operatingSystem": "Web",
+            "inLanguage": "fr-FR",
+            "description": "Consultez la m\u00e9t\u00e9o en direct, les temp\u00e9ratures et les pr\u00e9visions \u00e0 5 jours pour les grandes villes du monde.",
+            "creator": {
+                "@type": "Person",
+                "name": "Guillaume SERE"
+            }
+        }
+    </script>
+
+    <title>Climatlas - M&eacute;t&eacute;o en direct et pr&eacute;visions</title>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2M4P84JQ0N"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-2M4P84JQ0N');
-</script>
 
 <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>Activez JavaScript pour utiliser Climatlas et consulter la m&eacute;t&eacute;o en direct.</noscript>
     <div id="root"></div>
 
 </body>
