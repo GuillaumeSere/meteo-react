@@ -1,41 +1,71 @@
 import React from "react";
 import './current-weather.css';
 
+const formatTime = (timestamp, timezone) => {
+    if (!timestamp) {
+        return '--:--';
+    }
+
+    return new Date((timestamp + timezone) * 1000).toLocaleTimeString('fr-FR', {
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZone: 'UTC',
+    });
+};
+
+const round = (value) => Math.round(value);
+
 const CurrentWeather = ({ data }) => {
+    const weather = data.weather[0];
+    const timezone = data.timezone || 0;
+    const localTime = formatTime(data.dt, timezone);
+
+    const metrics = [
+        { label: 'Ressenti', value: `${round(data.main.feels_like)}\u00B0C` },
+        { label: 'Vent', value: `${Math.round(data.wind.speed * 3.6)} km/h` },
+        { label: 'Humidite', value: `${data.main.humidity}%` },
+        { label: 'Pression', value: `${data.main.pressure} hPa` },
+        { label: 'Nuages', value: `${data.clouds?.all ?? 0}%` },
+        { label: 'Visibilite', value: `${Math.round((data.visibility || 0) / 1000)} km` },
+    ];
+
     return (
-        <div className='weather'>
-            <div className="top">
-            <div>
-                <p className='city'>{data.city}</p>
-                <p className='weather-description'>{data.weather[0].description}</p>
+        <section className='weather-stage'>
+            <div className="weather-visual">
+                <div className="sky-ring" aria-hidden="true">
+                    <span />
+                    <span />
+                    <span />
+                </div>
+                <img src={`icons/${weather.icon}.png`} alt={weather.description} className='weather-icon' />
+                <p className='weather-description'>{weather.description}</p>
+                <h2>{data.city}</h2>
+                <p className="local-time">Heure locale {localTime}</p>
+                <p className="temperature">{round(data.main.temp)}<span>{'\u00B0C'}</span></p>
             </div>
-                <img src={`icons/${data.weather[0].icon}.png`} alt="weather" className='weather-icon' />
-            </div>
-            <div className="bottom">
-                <p className="temperature">{Math.trunc(data.main.temp)}°C</p>
-                <div className="details">
-                    <div className="parameter-row">
-                        <span className="parameter-label">Details</span>
-                    </div><br />
-                    <div className="parameter-row">
-                        <span className="parameter-label">Feels like</span>
-                        <span className="parameter-value">{Math.trunc(data.main.feels_like)}°C</span>
+
+            <div className="weather-details">
+                <div className="sun-row">
+                    <div>
+                        <span>Lever</span>
+                        <strong>{formatTime(data.sys?.sunrise, timezone)}</strong>
                     </div>
-                    <div className="parameter-row">
-                        <span className="parameter-label">Wind</span>
-                        <span className="parameter-value">{data.wind.speed} m/s</span>
-                    </div>
-                    <div className="parameter-row">
-                        <span className="parameter-label">Humidity</span>
-                        <span className="parameter-value">{data.main.humidity}%</span>
-                    </div>
-                    <div className="parameter-row">
-                        <span className="parameter-label">Pressure</span>
-                        <span className="parameter-value">{data.main.pressure} hPa</span>
+                    <div>
+                        <span>Coucher</span>
+                        <strong>{formatTime(data.sys?.sunset, timezone)}</strong>
                     </div>
                 </div>
+
+                <div className="metrics-grid">
+                    {metrics.map((metric) => (
+                        <div className="metric-card" key={metric.label}>
+                            <span>{metric.label}</span>
+                            <strong>{metric.value}</strong>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
+        </section>
     );
 }
 

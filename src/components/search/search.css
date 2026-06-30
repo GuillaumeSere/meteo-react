@@ -1,0 +1,61 @@
+.search-control {
+    width: 100%;
+}
+
+.city-select__control {
+    min-height: 58px;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.09) !important;
+    box-shadow: none !important;
+}
+
+.city-select__control:hover,
+.city-select__control--is-focused {
+    border-color: #f4c430 !important;
+}
+
+.city-select__value-container {
+    padding: 4px 16px !important;
+}
+
+.city-select__input-container,
+.city-select__single-value {
+    color: #fff9ea !important;
+}
+
+.city-select__placeholder {
+    color: rgba(255, 249, 234, 0.56) !important;
+}
+
+.city-select__indicator,
+.city-select__dropdown-indicator {
+    color: rgba(255, 249, 234, 0.72) !important;
+}
+
+.city-select__indicator-separator {
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+
+.city-select__menu {
+    z-index: 20;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px !important;
+    background: #161614 !important;
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.34) !important;
+}
+
+.city-select__option {
+    color: #fff9ea !important;
+    cursor: pointer !important;
+}
+
+.city-select__option--is-focused {
+    background: rgba(244, 196, 48, 0.16) !important;
+}
+
+.city-select__option--is-selected {
+    background: #f4c430 !important;
+    color: #11110f !important;
+}
